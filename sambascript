@@ -21,3 +21,10 @@ chmod 755 /srv/readonly
 service smbd restart
 service smbd status
 testparm
+useradd user2 –c "user2" –g users –m –d /home/user2 –s /bin/bash
+passwd user2 
+mkdir /srv/user2
+chown user2 /srv/user2
+chmod 700 /srv/user2
+smbpasswd -a user2 
+service smbd restart
