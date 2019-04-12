@@ -4,11 +4,11 @@ apt-get update -y
 apt-get upgrade -y
 apt-get install samba -y
 
+
 mv /etc/hostname /etc/oldhostname
-cd /etc
-wget github.com/MoNwastaken/samba/blob/master/hostname
-cd /etc/samba
+cp ./samba/hostmane /etc/hostname
 mv /etc/samba/smb.conf /etc/samba/oldsmb.conf
+cp ./samba/smb.conf /etc/samba/smb.conf
 
 
 mkdir /srv/kozos
