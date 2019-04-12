@@ -3,5 +3,19 @@ sudo -s
 apt-get update -y
 apt-get upgrade -y
 apt-get install samba -y
+
+mv /etc/hostname /etc/oldhostname
+cd /etc
+wget github.com/MoNwastaken/samba/blob/master/hostname
+cd /etc/samba
+mv /etc/samba/smb.conf /etc/samba/oldsmb.conf
+
+
 mkdir /srv/kozos
 chmod 777 /srv/kozos
+mkdir /srv/readonly
+chmod 755 /srv/readonly
+
+service smbd restart
+service smbd status
+testparm
