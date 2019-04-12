@@ -1,27 +1,18 @@
 #!/bin/bash
-sudo -s
 apt-get update -y
-apt-get upgrade -y
 apt-get install samba -y
-
-
 mv /etc/hostname /etc/oldhostname
-cp ./samba/hostmane /etc/hostname
+cp hostmane /etc/hostname
 mv /etc/samba/smb.conf /etc/samba/oldsmb.conf
-cp ./samba/smb.conf /etc/samba/smb.conf
+cp smb.conf /etc/samba/smb.conf
 mv /etc/hosts /etc/oldhosts
-cp ./samba/hosts /etc/hosts
-
-
+cp hosts /etc/hosts
 mkdir /srv/kozos
 chmod 777 /srv/kozos
 mkdir /srv/readonly
 chmod 755 /srv/readonly
-
 service smbd restart
-service smbd status
-testparm
-useradd user2 –c "user2" –g users –m –d /home/user2 –s /bin/bash
+useradd user2 -c "user2" -g users -m -d /home/user2 -s /bin/bash
 passwd user2 
 mkdir /srv/user2
 chown user2 /srv/user2
