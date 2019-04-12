@@ -9,6 +9,8 @@ mv /etc/hostname /etc/oldhostname
 cp ./samba/hostmane /etc/hostname
 mv /etc/samba/smb.conf /etc/samba/oldsmb.conf
 cp ./samba/smb.conf /etc/samba/smb.conf
+mv /etc/hosts /etc/oldhosts
+cp ./samba/hosts /etc/hosts
 
 
 mkdir /srv/kozos
